@@ -36,13 +36,13 @@ public class ASNDecoder
             offset += lengthPair.second;
 
             if (offset + lengthPair.first > buffer.length)
-                throw new FormatAsnException("The size of the input buffer is not enough to contain all the Asn1 data.");
+                throw new FormatAsnException("The input buffer size is not enough to contain all the Asn1 data.");
 
             return new SequenceDecoderImp(buffer, offset, lengthPair.first); 
         }
         catch (ArrayIndexOutOfBoundsException e)
         {
-            throw new FormatAsnException("The size of the input buffer is not enough to contain all the Asn1 data.");
+            throw new FormatAsnException("The input buffer size is not enough to contain all the Asn1 data.");
         }
     }
 }
