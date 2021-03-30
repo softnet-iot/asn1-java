@@ -42,7 +42,7 @@ public class ASNEncoder
     public AsnEncoding getHeadedEncoding(int headerSize)
     {
         if (headerSize < 0)
-            throw new IllegalArgumentException("The value of 'headerSize' must not be negative.");
+            throw new IllegalArgumentException("The value of 'headerSize' must be non-negative.");
 
         int estimatedlength = m_Sequence.estimateTLV();
         BinaryStack binStack = new BinaryStack();
